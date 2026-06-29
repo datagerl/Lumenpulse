@@ -26,6 +26,10 @@ export class SorobanEventsProcessor extends WorkerHost {
     private readonly eventRepo: Repository<SorobanEvent>,
 
     private readonly sorobanEventsService: SorobanEventsService,
+<<<<<<< Updated upstream
+=======
+    private readonly dlqService: SorobanEventsDeadLetterService,
+>>>>>>> Stashed changes
     private readonly configService: ConfigService,
   ) {
     super();
@@ -77,6 +81,7 @@ export class SorobanEventsProcessor extends WorkerHost {
     await this.eventRepo.save(event);
 
     try {
+<<<<<<< Updated upstream
       const projectRegistryContractId = this.configService.get<string>(
         'PROJECT_REGISTRY_CONTRACT_ID',
       );
@@ -85,6 +90,10 @@ export class SorobanEventsProcessor extends WorkerHost {
           { txHash, eventIndex, contractId },
           'Processing Project Registry event',
         );
+=======
+      const stellarConfig = this.configService.getStellarConfig();
+      if (contractId === stellarConfig.contracts.projectRegistry) {
+>>>>>>> Stashed changes
         // Cast rawPayload to any so we can access its nested properties safely
         const payloadData = rawPayload as Record<string, any>;
 

@@ -14,6 +14,7 @@ import { SorobanEventIndexerService } from './soroban-event-indexer.service';
 import { ProjectRegistryEntity } from '../database/entities/project-registry.entity';
 import { StellarModule } from '../stellar/stellar.module';
 import { SchedulerModule } from '../scheduler/scheduler.module';
+import { AppConfigModule } from '../config/config.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { SchedulerModule } from '../scheduler/scheduler.module';
     BullModule.registerQueue({ name: SOROBAN_EVENTS_QUEUE }),
     StellarModule,
     SchedulerModule,
+    AppConfigModule,
   ],
   controllers: [SorobanEventsController],
   providers: [

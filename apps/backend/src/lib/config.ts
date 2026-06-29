@@ -1042,6 +1042,11 @@ export const config = Object.freeze({
     ingestSecret: parsedEnv.SOROBAN_INGEST_SECRET,
     timestampToleranceMs: parsedEnv.SOROBAN_TIMESTAMP_TOLERANCE_MS ?? 300_000,
     indexerStartLedger: parsedEnv.SOROBAN_INDEXER_START_LEDGER,
+<<<<<<< Updated upstream
+=======
+    simulationTraceLogging: parsedEnv.SOROBAN_SIMULATION_TRACE_LOGGING,
+    simulationTraceLevel: parsedEnv.SOROBAN_SIMULATION_TRACE_LEVEL,
+>>>>>>> Stashed changes
   }),
   metrics: Object.freeze({
     allowedIps: Object.freeze(splitCsv(parsedEnv.METRICS_ALLOWED_IPS)),
