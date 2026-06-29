@@ -15,6 +15,7 @@ import {
   PROCESS_EVENT_JOB,
 } from './soroban-events.service';
 import { mapSorobanEvent } from './soroban-event-mapper';
+import { ConfigService } from '../config/config.service';
 
 @Processor(SOROBAN_EVENTS_QUEUE)
 @Injectable()

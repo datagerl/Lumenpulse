@@ -51,9 +51,14 @@ export class SorobanRpcClientService {
   private readonly rpcErrors: Counter;
   private readonly rpcRequests: Counter;
 
+<<<<<<< Updated upstream
   constructor(@Optional() registry?: Registry) {
 =======
+<  constructor(
     private readonly simulationTraceLogger: SimulationTraceLogger,
+    @Optional() registry?: Registry,
+  ) {
+>>>>>>> Stashed changes
     const rpcUrl =
       config.stellar.sorobanRpcUrl ??
       (config.stellar.network === 'mainnet'
